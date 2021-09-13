@@ -1,1 +1,25 @@
-<p>header works!</p>
+<header>
+  <div class="jumbotron-fluid">
+    <div class="row header-row">
+      <div class="col">
+        <img src="assets/images/Wapen_van_Amsterdam.svg" class="header-image">
+      </div>
+      <div class="col">
+        <h1 class="text-center">E-Bikes Amsterdam </h1>
+      </div>
+      <div class="col">
+        <img src="assets/images/XIAOMI-Mi-Electric-Scooter-1S-EU.webp" class="header-image">
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div id="date" class="col text-center">
+          Vandaag is het: {{now | date:'fullDate'}}
+        </div>
+        <div class="col text-center">
+          Subtitle
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
