@@ -1,0 +1,46 @@
+.app {
+  margin-top: 1%;
+}
+
+.column {
+  position: center;
+  padding: 2%;
+  margin: 4px;
+}
+
+#column-left {
+  width: 20%;
+  margin-left: 1%;
+}
+
+#column-middle {
+  margin-top: -1.25%;
+  width: 56%;
+}
+
+#column-right {
+  width: 20%;
+}
+
+.auction-img {
+  width: 220px;
+  height: 220px;
+}
+
+.scroll {
+  overflow-y: auto;
+}
+
+#citybutton {
+  width: 100%;
+}
+
+.badge {
+  float: right;
+}
+
+.scooter-img {
+  margin: 2px;
+  height: 35%;
+  width: 30%;
+}
