@@ -11,7 +11,8 @@ export class HeaderComponent implements OnInit {
   nowFormatted: string;
 
   constructor() {
-    this.nowFormatted = formatDate(this.now, 'dd-mm-yyyy', 'en');
+    this.nowFormatted = formatDate(this.now, 'dd-mm-yyyy', 'nl');
+    Date.toLocaleString;
   }
 
   ngOnInit(): void {
