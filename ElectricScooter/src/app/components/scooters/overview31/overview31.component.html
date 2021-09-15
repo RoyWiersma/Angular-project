@@ -1,0 +1,22 @@
+<table class="table" style="text-align: center;">
+  <thead style="background-color: antiquewhite">
+  <tr>
+    <th>ID</th>
+    <th>Tag</th>
+    <th>Status</th>
+    <th>Location</th>
+    <th>Mileage</th>
+    <th>Battery Charge</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let scooter of scooters">
+    <td>{{ scooter.id }}</td>
+    <td>{{ scooter.tag }}</td>
+    <td>{{ scooter.status }}</td>
+    <td>{{ scooter.gpsLocation }}</td>
+    <td>{{ scooter.mileage }} km</td>
+    <td>{{ scooter.batteryCharge }}%</td>
+  </tr>
+  </tbody>
+</table>
