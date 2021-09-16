@@ -8,11 +8,8 @@ import {formatDate} from '@angular/common';
 })
 export class HeaderComponent implements OnInit {
   now = new Date();
-  nowFormatted: string;
 
   constructor() {
-    this.nowFormatted = formatDate(this.now, 'dd-mm-yyyy', 'nl');
-    Date.toLocaleString;
   }
 
   ngOnInit(): void {
