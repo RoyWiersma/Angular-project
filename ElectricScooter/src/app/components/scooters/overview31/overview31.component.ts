@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Scooter} from "../../../models/scooter";
+import {ScooterStatus} from "../../../models/scooter-status";
 
 @Component({
   selector: 'app-overview31',
@@ -9,7 +10,7 @@ import {Scooter} from "../../../models/scooter";
 export class Overview31Component implements OnInit {
 
 
-  scooters: Scooter[];
+  scooters: Scooter[] = [];
   constructor() { }
 
   ngOnInit(): void {
