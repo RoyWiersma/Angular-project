@@ -50,7 +50,6 @@ export class Scooter {
   private static getRandomInt(from, to, fixed): number {
     return (Math.random() * (to - from) + from).toFixed(fixed);
   }
-
   // private static getRandomAmsterdamGps(): string{
   //   if (this.getRandomStatus() != ScooterStatus.IN_USE){
   //     console.log(this.getRandomInt(52, 52.999999, 6) + ', ' + this.getRandomInt(4, 4.999999, 6))
@@ -64,10 +63,10 @@ export class Scooter {
 
   // @ts-ignore
   public static getRandomStatus(): ScooterStatus {
-    const status = this.getRandomInt(0, 3, 0)
+    const status = Math.floor(Math.random() * 3);
     // const values = Object.keys(ScooterStatus);
     // const enumKey = values[Math.floor(Math.random() * values.length)]
-    console.log(status);
+    // console.log(status);
     //
     // return enumKey
     switch (status) {
@@ -94,7 +93,7 @@ export class Scooter {
 
   private static getRandomAmsterdamGps(): string {
     console.log("getRandomAmsterdamGps" + this.getRandomStatus())
-    if (this.getRandomStatus() === 'IDLE') {
+    if (this.getRandomStatus()) {
       return this.getRandomInt(52, 52.999999, 6) + ', ' + this.getRandomInt(4, 4.999999, 6);
     } else {
       return "";
