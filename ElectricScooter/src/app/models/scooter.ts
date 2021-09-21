@@ -10,7 +10,7 @@ export class Scooter {
   batteryCharge: number;
 
   constructor(id: number, tag: string, status: ScooterStatus, gpsLocation: string, mileage: number, batteryCharge: number) {
-    this.id = 30000;
+    this.id = id;
     this.tag = tag;
     this.status = status;
     this.gpsLocation = gpsLocation;
@@ -20,7 +20,7 @@ export class Scooter {
 
   public static createSampleScooter(pId = 0): Scooter {
     return new Scooter(
-      pId =  + 3,
+      pId ,
       this.getRandomString(8),
       status = this.getRandomStatus(),
       this.getRandomAmsterdamGps(),
@@ -75,4 +75,5 @@ export class Scooter {
       }
     }
   }
+
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Scooter} from "../../../models/scooter";
 
 
@@ -11,16 +11,18 @@ export class Overview31Component implements OnInit {
 
 
   scooters: Scooter[] = [];
-  constructor() { }
+
+  constructor() {}
 
   ngOnInit(): void {
-    this.scooters=[];
-    for (let i=0; i< 8; i++){
-      this.scooters[i] = Scooter.createSampleScooter();
-
+    this.scooters = [];
+    for (let i = 0; i < 8; i++) {
+      this.scooters[i] = Scooter.createSampleScooter(Overview31Component.startCount += 3);
     }
   }
-  public onNewScooter(): void{
-    this.scooters[this.scooters.length] = Scooter.createSampleScooter();
+
+  public onNewScooter(): void {
+    this.scooters[this.scooters.length] = Scooter.createSampleScooter(Overview31Component.startCount += 3);
   }
+  public static startCount: number = 30000;
 }
