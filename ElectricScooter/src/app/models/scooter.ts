@@ -7,8 +7,6 @@ import {ScooterStatus} from "./scooter-status";
 
 export class Scooter {
 
-  public static num = 30000;
-
   id: number;
   tag: string;
   status: ScooterStatus;
@@ -25,9 +23,9 @@ export class Scooter {
     this.batteryCharge = batteryCharge;
   }
 
-  public static createSampleScooter(pId = 0): Scooter {
+  public static createSampleScooter(pId = 30000): Scooter {
     return new Scooter(
-      this.getRandomInt(30001000, 30001999, 0),
+      pId ,
       this.getRandomString(8),
       this.getRandomStatus(),
       this.getRandomAmsterdamGps(),
@@ -50,40 +48,32 @@ export class Scooter {
   private static getRandomInt(from, to, fixed): number {
     return (Math.random() * (to - from) + from).toFixed(fixed);
   }
-  // private static getRandomAmsterdamGps(): string{
-  //   if (this.getRandomStatus() != ScooterStatus.IN_USE){
-  //     console.log(this.getRandomInt(52, 52.999999, 6) + ', ' + this.getRandomInt(4, 4.999999, 6))
-  //     return this.getRandomInt(52, 52.999999, 6) + ', ' + this.getRandomInt(4, 4.999999, 6);
-  //   }
-  //   else {
-  //     return "";
-  //   }
-  // }
+  private static getRandomAmsterdamGps(): string{
+    if (this.getRandomStatus() != ScooterStatus.IN_USE){
+      console.log(this.getRandomInt(52, 52.999999, 6) + ', ' + this.getRandomInt(4, 4.999999, 6))
+      return this.getRandomInt(52, 52.999999, 6) + ', ' + this.getRandomInt(4, 4.999999, 6);
+    }
+    else {
+      return "";
+    }
+  }
 
 
   // @ts-ignore
   public static getRandomStatus(): ScooterStatus {
     const status = Math.floor(Math.random() * 3);
-    // const values = Object.keys(ScooterStatus);
-    // const enumKey = values[Math.floor(Math.random() * values.length)]
-    // console.log(status);
-    //
-    // return enumKey
     switch (status) {
       case 0: {
         console.log('in use');
         return ScooterStatus.IN_USE;
-        break;
       }
       case 1: {
         console.log('idle');
         return ScooterStatus.IDLE;
-        break;
       }
       case 2: {
         console.log('maintenance');
         return ScooterStatus.MAINTENANCE;
-        break;
       }
       default: {
         console.log('default');
@@ -91,12 +81,4 @@ export class Scooter {
     }
   }
 
-  private static getRandomAmsterdamGps(): string {
-    console.log("getRandomAmsterdamGps" + this.getRandomStatus())
-    if (this.getRandomStatus()) {
-      return this.getRandomInt(52, 52.999999, 6) + ', ' + this.getRandomInt(4, 4.999999, 6);
-    } else {
-      return "";
-    }
-  }
 }
