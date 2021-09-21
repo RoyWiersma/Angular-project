@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Scooter} from "../../../models/scooter";
-import {ScooterStatus} from "../../../models/scooter-status";
+
 
 @Component({
   selector: 'app-overview31',
@@ -16,8 +16,8 @@ export class Overview31Component implements OnInit {
   ngOnInit(): void {
     this.scooters=[];
     for (let i=0; i< 8; i++){
-      this.scooters.push(Scooter.createSampleScooter()
-      )
+      this.scooters[i] = Scooter.createSampleScooter();
+
     }
   }
   public onNewScooter(): void{

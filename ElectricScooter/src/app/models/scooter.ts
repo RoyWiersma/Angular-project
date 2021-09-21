@@ -1,8 +1,3 @@
-// export enum ScooterState {
-//   IDLE = 'IDLE',
-//   INUSE = 'INUSE',
-//   MAINTENANCE = 'MAINTENANCE'
-// }
 import {ScooterStatus} from "./scooter-status";
 
 export class Scooter {
@@ -15,7 +10,7 @@ export class Scooter {
   batteryCharge: number;
 
   constructor(id: number, tag: string, status: ScooterStatus, gpsLocation: string, mileage: number, batteryCharge: number) {
-    this.id = id;
+    this.id = 30000;
     this.tag = tag;
     this.status = status;
     this.gpsLocation = gpsLocation;
@@ -23,11 +18,11 @@ export class Scooter {
     this.batteryCharge = batteryCharge;
   }
 
-  public static createSampleScooter(pId = 30000): Scooter {
+  public static createSampleScooter(pId = 0): Scooter {
     return new Scooter(
-      pId ,
+      pId =  + 3,
       this.getRandomString(8),
-      this.getRandomStatus(),
+      status = this.getRandomStatus(),
       this.getRandomAmsterdamGps(),
       this.getRandomInt(0, 10000, 0),
       this.getRandomInt(5, 100, 0)
@@ -48,12 +43,12 @@ export class Scooter {
   private static getRandomInt(from, to, fixed): number {
     return (Math.random() * (to - from) + from).toFixed(fixed);
   }
-  private static getRandomAmsterdamGps(): string{
-    if (this.getRandomStatus() != ScooterStatus.IN_USE){
-      console.log(this.getRandomInt(52, 52.999999, 6) + ', ' + this.getRandomInt(4, 4.999999, 6))
+
+  private static getRandomAmsterdamGps(): string {
+    if (status != ScooterStatus.IN_USE) {
+      console.log(status);
       return this.getRandomInt(52, 52.999999, 6) + ', ' + this.getRandomInt(4, 4.999999, 6);
-    }
-    else {
+    } else {
       return "";
     }
   }
@@ -80,5 +75,4 @@ export class Scooter {
       }
     }
   }
-
 }
