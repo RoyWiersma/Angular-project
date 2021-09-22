@@ -1,26 +1,6 @@
 .selected {
-  background-color: aqua;
+  background-color: lightgrey;
 }
-
-.overview2-content {
-  display: flex;
-  flex-direction: row;
+.container {
+  padding-top: 2%;
 }
-
-.table-overview2 {
-  margin-right: 150px;
-}
-
-.table-overview2 th {
-  border: 4px  #DEB887;
-  border-radius: 5px;
-  height: 10px;
-  background-color: antiquewhite;
-}
-/*table td.highlighted {*/
-/*  background-color: aqua;*/
-/*}*/
-
-/*.table2:hover {*/
-/*  background-color:#e6e6e6;*/
-/*}*/
