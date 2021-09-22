@@ -7,16 +7,22 @@ import { WelcomeComponent } from './components/welcome/welcome.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import '@angular/common/locales/global/nl';
 import {Overview31Component} from "./components/scooters/overview31/overview31.component";
+import { Detail32Component } from './components/scooters/detail32/detail32.component';
+import {Overview32Component} from "./components/scooters/overview32/overview32.component";
+import {FormsModule} from "@angular/forms";
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     WelcomeComponent,
     NavBarComponent,
-    Overview31Component
+    Overview31Component,
+    Overview32Component,
+    Detail32Component
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [{provide: LOCALE_ID, useValue: 'nl'}],
   bootstrap: [AppComponent]
