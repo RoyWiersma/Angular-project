@@ -1,23 +1,29 @@
-<h2>Scooters in your neighbourhood:</h2>
-<div class="overview2-content">
-  <div class="table-overview2">
-    <table border="1" class="table2">
-
-      <th>Tag</th>
-      <th>Status</th>
-      <tr class="table-primary" *ngFor="let scooter of scooterList; let i = index" (click)="selectScooter(scooter, i)">
-        <td [ngClass]="{'selected': selectedScooterId  === i}"> {{scooter.tag}} </td>
-        <td [ngClass]="{'selected': selectedScooterId  === i}"> {{scooter.status}}</td>
+<div class="container">
+  <div class="row">
+    <div class="col">
+    <table class="table">
+      <thead>
+      <tr>
+      <th scope="col">Tag</th>
+      <th scope="col">Status</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let scooter of scooters" (click)="selectScooter(scooter)" [ngClass]="{ 'selected': scooter == selectedScooter }">
+        <th> {{scooter.tag}} </th>
+        <td> {{scooter.status}}</td>
 
       </tr>
-
+      </tbody>
     </table>
-
-    <button type="button" class="btn btn-primary" (click)='addRandomScooter()'> Add scooter</button>
+    <button type="button" class="btn btn-primary" (click)='addRandomScooter(); selectScooter(scooters)' > Add scooter</button>
   </div>
-
-  <app-detail32 [selectedScooterDetail]="selectedScooter"
-                (scooterUpdate)="onUpdatedEvent($event)">
+  <div class="col">
+  <app-detail32 (scooterDelete)="ondeleteScooter($event)" *ngIf="selectedScooter; else noneSelected" [scooter]="selectedScooter" >
   </app-detail32>
-
+  </div>
+  <ng-template #noneSelected>
+    <p>niks te zien</p>
+  </ng-template>
+</div>
 </div>

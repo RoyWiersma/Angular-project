@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Scooter} from "../../../models/scooter";
-import {Overview31Component} from "../overview31/overview31.component";
+
 
 @Component({
   selector: 'app-overview32',
@@ -9,45 +9,25 @@ import {Overview31Component} from "../overview31/overview31.component";
 })
 export class Overview32Component implements OnInit {
 
-  public scooterList: Scooter[];
-
-  selectedScooter: Scooter;
-  selectedScooterId: number;
-
-  public scooter: Scooter;
-  // public scooterList!: Scooter[];
-  // public selectedScooter;
-  // public scooter!: Scooter;
-
-  // @Input() overview: Overview31Component;
-
   constructor() { }
-
-  public addRandomScooter(): void {
-
-    this.scooterList.push(Scooter.createSampleScooter());
-    this.selectScooter(this.scooter, this.scooterList.length);
-
-    this.selectedScooterId = this.scooterList.length -1;
-  }
+  selectedScooter: Scooter;
+  scooters: Scooter[] = [];
 
   ngOnInit(): void {
-    //
-    this.scooterList = [];
     for (let i = 0; i < 8; i++) {
-      this.scooterList[i] = Scooter.createSampleScooter(Overview31Component.startCount += 3);
+      this.scooters[i] = Scooter.createSampleScooter();
     }
   }
+    addRandomScooter(){
+      this.scooters[this.scooters.length] = Scooter.createSampleScooter();
+    }
 
-
-  onUpdatedEvent(scooter: Scooter) {
-     // this.offers[this.position] = offer;
-  }
-
-  selectScooter(selectedScooter: Scooter, position: number) {
+  selectScooter(selectedScooter) {
+    console.log(selectedScooter);
     this.selectedScooter = selectedScooter;
-    this.selectedScooterId = position;
-    console.log(this.selectedScooter);
-  }
 
+  }
+  ondeleteScooter(item: Scooter) {
+    this.scooters.splice(this.scooters.indexOf(item), 1)
+  }
 }

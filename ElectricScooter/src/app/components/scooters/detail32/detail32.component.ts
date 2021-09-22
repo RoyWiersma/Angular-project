@@ -9,32 +9,19 @@ import {ScooterStatus} from "../../../models/scooter-status";
 })
 export class Detail32Component implements OnInit {
 
-
-  @Input('selectedScooterDetail') selectedScooterDetail: Scooter;
-  public Status = ScooterStatus;
-
-  @Output()
-  scooterUpdate= new EventEmitter<Scooter>();
-
+  @Input()
+  scooter: Scooter;
 
   @Output()
   scooterDelete= new EventEmitter<Scooter>();
-
-  public types = Object.values(ScooterStatus);
-
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  //
-  // onUpdateScooter() {
-  //   this.scooterUpdate.emit(this.detailScooter);
-  // }
-
-  removeScooter(): any {
-    this.scooterDelete.emit(this.selectedScooterDetail);
+  deleteAlert() {
+    this.scooterDelete.emit(this.scooter);
   }
 
 }
