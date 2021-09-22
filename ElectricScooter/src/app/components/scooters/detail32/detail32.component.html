@@ -1,0 +1,48 @@
+<div class="div-detail2">
+
+  <div class="table-detail-2" *ngIf="selectedScooterDetail else notSelected">
+    <table border="1">
+
+      <th colspan="2">Update Scooter {{selectedScooterDetail.tag}} (id = {{ selectedScooterDetail.id }})</th>
+
+      <tr>Tag:</tr>
+      <tr>
+        <input type="text" [(ngModel)]="selectedScooterDetail.tag">
+      </tr>
+      <tr>
+      <tr>Status:</tr>
+      <tr><select [(ngModel)]="selectedScooterDetail.status">
+        <option *ngFor="let fileType of types"
+                [value]="fileType">
+          {{Status[fileType]}}
+        </option>
+      </select></tr>
+
+
+      <tr>GPS-Location:</tr>
+      <tr><input type="text" [(ngModel)]="selectedScooterDetail.gpsLocation"></tr>
+
+
+      <tr>Mileage:</tr>
+      <tr><input type="text" [(ngModel)]="selectedScooterDetail.mileage"></tr>
+
+
+      <tr>Battery Charge:</tr>
+      <tr><input type="text" [(ngModel)]="selectedScooterDetail.batteryCharge"></tr>
+
+
+    </table>
+    <button class="btn" (click)="removeScooter()">Delete</button>
+    <div class="buttons">
+<!--      <button (click)="onDeleteScooter()">Delete</button>-->
+<!--      <button (click)="onUpdateScooter()">Update</button>-->
+    </div>
+  </div>
+
+  <ng-template #notSelected>
+    <p>Select a Scooter at the left</p>
+  </ng-template>
+
+</div>
+
+

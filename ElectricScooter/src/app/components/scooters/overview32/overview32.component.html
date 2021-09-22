@@ -1,0 +1,23 @@
+<h2>Scooters in your neighbourhood:</h2>
+<div class="overview2-content">
+  <div class="table-overview2">
+    <table border="1" class="table2">
+
+      <th>Tag</th>
+      <th>Status</th>
+      <tr class="table-primary" *ngFor="let scooter of scooterList; let i = index" (click)="selectScooter(scooter, i)">
+        <td [ngClass]="{'selected': selectedScooterId  === i}"> {{scooter.tag}} </td>
+        <td [ngClass]="{'selected': selectedScooterId  === i}"> {{scooter.status}}</td>
+
+      </tr>
+
+    </table>
+
+    <button type="button" class="btn btn-primary" (click)='addRandomScooter()'> Add scooter</button>
+  </div>
+
+  <app-detail32 [selectedScooterDetail]="selectedScooter"
+                (scooterUpdate)="onUpdatedEvent($event)">
+  </app-detail32>
+
+</div>
