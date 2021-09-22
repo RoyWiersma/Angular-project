@@ -15,7 +15,7 @@ export class Overview31Component implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
-    this.scooters = [];
+    // this.scooters = [];
     for (let i = 0; i < 8; i++) {
       this.scooters[i] = Scooter.createSampleScooter(Overview31Component.startCount += 3);
     }

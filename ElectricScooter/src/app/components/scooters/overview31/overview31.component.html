@@ -1,14 +1,15 @@
-<div class="container">
-<table class="table" style="text-align: center;">
-  <thead style="background-color: antiquewhite">
-  <tr>
-    <th scope="col">ID</th>
-    <th scope="col">Tag</th>
-    <th scope="col">Status</th>
-    <th scope="col">Location</th>
-    <th scope="col">Mileage</th>
-    <th scope="col">Battery Charge</th>
-  </tr>
+<div class="container-fluid">
+  <div class="table-responsive">
+    <table class="table" style="text-align: center;">
+      <thead style="background-color: antiquewhite">
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Tag</th>
+        <th scope="col">Status</th>
+        <th scope="col">Location</th>
+        <th scope="col">Mileage</th>
+        <th scope="col">Battery Charge</th>
+      </tr>
   </thead>
   <tbody>
   <tr *ngFor="let scooter of scooters">
@@ -20,6 +21,7 @@
     <td>{{ scooter.batteryCharge }}%</td>
   </tr>
   </tbody>
-</table>
-<button (click)="onNewScooter()" type="button" class="btn btn-primary">Add Scooter</button>
+    </table>
+    <button (click)="onNewScooter()" type="button" class="btn btn-primary">Add Scooter</button>
+  </div>
 </div>
