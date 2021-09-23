@@ -17,12 +17,11 @@ export class Overview31Component implements OnInit {
   ngOnInit(): void {
     // this.scooters = [];
     for (let i = 0; i < 8; i++) {
-      this.scooters[i] = Scooter.createSampleScooter(Overview31Component.startCount += 3);
+      this.scooters[i] = Scooter.createSampleScooter();
     }
   }
 
   public onNewScooter(): void {
-    this.scooters[this.scooters.length] = Scooter.createSampleScooter(Overview31Component.startCount += 3);
+    this.scooters[this.scooters.length] = Scooter.createSampleScooter();
   }
-  public static startCount: number = 30000;
 }

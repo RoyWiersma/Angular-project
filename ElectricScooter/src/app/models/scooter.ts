@@ -2,6 +2,8 @@ import {ScooterStatus} from "./scooter-status";
 
 export class Scooter {
 
+  public static num = 30000;
+
   id: number;
   tag: string;
   status: ScooterStatus;
@@ -10,7 +12,7 @@ export class Scooter {
   batteryCharge: number;
 
   constructor(id: number, tag: string, status: ScooterStatus, gpsLocation: string, mileage: number, batteryCharge: number) {
-    this.id = id;
+    this.id = Scooter.num;
     this.tag = tag;
     this.status = status;
     this.gpsLocation = gpsLocation;
@@ -19,14 +21,16 @@ export class Scooter {
   }
 
   public static createSampleScooter(pId = 0): Scooter {
+    pId = Scooter.num +=3
     return new Scooter(
-      pId ,
+      pId,
       this.getRandomString(8),
       status = this.getRandomStatus(),
       this.getRandomAmsterdamGps(),
       this.getRandomInt(0, 10000, 0),
       this.getRandomInt(5, 100, 0)
     );
+
 
   }
 
