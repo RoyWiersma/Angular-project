@@ -31,7 +31,6 @@ export class Scooter {
       this.getRandomInt(5, 100, 0)
     );
 
-
   }
 
   private static getRandomString(length: number): string {
