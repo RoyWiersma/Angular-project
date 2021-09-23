@@ -1,6 +1,5 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Scooter} from "../../../models/scooter";
-import {ScooterStatus} from "../../../models/scooter-status";
 
 @Component({
   selector: 'app-detail32',
@@ -9,8 +8,7 @@ import {ScooterStatus} from "../../../models/scooter-status";
 })
 export class Detail32Component implements OnInit {
 
-  @Input()
-  scooter: Scooter;
+  @Input() scooter!: Scooter;
 
   @Output()
   scooterDelete= new EventEmitter<Scooter>();

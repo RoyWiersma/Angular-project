@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Scooter} from "../../../models/scooter";
 
 
@@ -10,23 +10,29 @@ import {Scooter} from "../../../models/scooter";
 export class Overview32Component implements OnInit {
 
   constructor() { }
-  selectedScooter: Scooter;
+
+  selectedScooter: Scooter | undefined;
   scooters: Scooter[] = [];
+
 
   ngOnInit(): void {
     for (let i = 0; i < 8; i++) {
       this.scooters[i] = Scooter.createSampleScooter();
     }
   }
-    addRandomScooter(){
-      this.scooters[this.scooters.length] = Scooter.createSampleScooter();
+    addRandomScooter() {
+      let createScooter = Scooter.createSampleScooter();
+      this.scooters[this.scooters.length] = createScooter;
+
+      this.selectScooter(createScooter);
     }
 
-  selectScooter(selectedScooter) {
+  selectScooter(selectedScooter: Scooter) {
     console.log(selectedScooter);
     this.selectedScooter = selectedScooter;
-
   }
+
+
   ondeleteScooter(item: Scooter) {
     this.scooters.splice(this.scooters.indexOf(item), 1)
   }
