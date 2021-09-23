@@ -33,7 +33,8 @@ export class Overview32Component implements OnInit {
   }
 
 
-  ondeleteScooter(item: Scooter) {
+  onDeletedScooter(item: Scooter) {
     this.scooters.splice(this.scooters.indexOf(item), 1)
+    this.selectedScooter = undefined;
   }
 }

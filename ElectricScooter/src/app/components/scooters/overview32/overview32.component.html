@@ -20,7 +20,7 @@
     <button type="button" class="btn btn-primary" (click)='addRandomScooter();' > Add scooter</button>
   </div>
   <div class="col">
-  <app-detail32 (scooterDelete)="ondeleteScooter($event)" *ngIf="selectedScooter; else noneSelected" [scooter]="selectedScooter" >
+  <app-detail32 (scooterDelete)="onDeletedScooter($event)" *ngIf="selectedScooter; else noneSelected" [scooter]="selectedScooter" >
   </app-detail32>
   </div>
   <ng-template #noneSelected>
