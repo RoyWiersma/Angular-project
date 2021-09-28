@@ -10,6 +10,8 @@ import {Overview31Component} from "./components/scooters/overview31/overview31.c
 import { Detail32Component } from './components/scooters/detail32/detail32.component';
 import {Overview32Component} from "./components/scooters/overview32/overview32.component";
 import {FormsModule} from "@angular/forms";
+import { Overview33Component } from './components/scooters/overview33/overview33.component';
+import { Detail33Component } from './components/scooters/detail33/detail33.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +20,9 @@ import {FormsModule} from "@angular/forms";
     NavBarComponent,
     Overview31Component,
     Overview32Component,
-    Detail32Component
+    Detail32Component,
+    Overview33Component,
+    Detail33Component
   ],
   imports: [
     BrowserModule,
