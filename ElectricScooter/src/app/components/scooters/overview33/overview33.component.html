@@ -1,34 +1,3 @@
-<p>overview33 works!</p>
-<!--<body>-->
-<!--<div id="left">-->
-<!--  <h3>A list of scooters in your neighbourhood:</h3>-->
-<!--  <table>-->
-<!--    <thead>-->
-<!--    <tr>-->
-<!--      <th scope="col">Tag</th>-->
-<!--      <th scope="col">Status</th>-->
-<!--    </tr>-->
-<!--    </thead>-->
-<!--    <tbody>-->
-<!--    <tr *ngFor="let s of this.scootersService.FindAll()"-->
-<!--        (click)='selectScooter($event, s)'>-->
-<!--      <td [class.highlight]="s.id == selectedScooterId" scope="row" data-label="Tag">{{s.tag}}</td>-->
-<!--      <td [class.highlight]="s.id == selectedScooterId" data-label="Status">{{s.status}}</td>-->
-<!--    </tr>-->
-<!--    </tbody>-->
-<!--  </table>-->
-<!--&lt;!&ndash;  <button class="btn" (click)='addRandomScooter()'>Add scooter</button>&ndash;&gt;-->
-<!--</div>-->
-
-<!--<div id="right">-->
-<!--  <h4 *ngIf="selectedScooterId === undefined">Select a scooter from the left page!</h4>-->
-<!--&lt;!&ndash;  <app-detail33 [editedScooterId]="selectedScooterId"&ndash;&gt;-->
-<!--&lt;!&ndash;                *ngIf="selectedScooterId !== undefined">&ndash;&gt;-->
-<!--&lt;!&ndash;  </app-detail33>&ndash;&gt;-->
-<!--</div>-->
-<!--</body>-->
-
-
 <div class="container">
   <div class="row">
     <div class="col">
@@ -42,8 +11,8 @@
         <tbody>
         <tr *ngFor="let s of this.scootersService.FindAll()"
             (click)='selectScooter($event, s)'>
-<!--          <th> {{s.tag}} </th>-->
-<!--          <td> {{s.status}}</td>-->
+          <!--          <th> {{s.tag}} </th>-->
+          <!--          <td> {{s.status}}</td>-->
 
           <td [class.highlight]="s.id == selectedScooterId" scope="row" data-label="Tag">{{s.tag}}</td>
           <td [class.highlight]="s.id == selectedScooterId" data-label="Status">{{s.status}}</td>
@@ -51,6 +20,11 @@
         </tr>
         </tbody>
       </table>
-<!--      <button type="button" class="btn btn-primary" (click)='addRandomScooter();' > Add scooter</button>-->
+      <!--      <button type="button" class="btn btn-primary" (click)='addRandomScooter();' > Add scooter</button>-->
     </div>
-<!--    <div class="col">-->
+    <div class="col">
+      <app-detail33>
+      </app-detail33>
+    </div>
+  </div>
+</div>
