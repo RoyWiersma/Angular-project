@@ -6,7 +6,7 @@ import {Scooter} from "../models/scooter";
 })
 export class ScootersService {
 
-  scooters: Scooter[] | undefined;
+  scooters: Scooter[];
   // selectedScooter: Scooter;
   onRemoveScooterEmitter = new EventEmitter<Scooter>();
 
@@ -17,24 +17,23 @@ export class ScootersService {
     }
   }
 
-  FindAll(): Scooter[] | undefined {
+  FindAll(): Scooter[]{
     console.log("FindAll" + this.scooters);
     return this.scooters;
-
   }
 
 
-  // FindById(id: number): Scooter {
-  //   console.log(id)
-  //   for (const scooter of this.FindAll()){
-  //     console.log(scooter);
-  //     if (scooter.id === id){
-  //       console.log("found the scooter")
-  //       return scooter;
-  //     }
-  //   }
-  //   return null;
-  // }
+  FindById(id: number): Scooter {
+    console.log(id)
+    for (const scooter of this.FindAll()){
+      console.log(scooter);
+      if (scooter.id === id){
+        console.log("found the scooter")
+        return scooter;
+      }
+    }
+    return null;
+  }
 
 
   // save(scooter): Scooter {
