@@ -23,7 +23,7 @@ export class ScootersService {
 
   }
 
-  //
+
   // FindById(id: number): Scooter {
   //   console.log(id)
   //   for (const scooter of this.FindAll()){
@@ -35,7 +35,7 @@ export class ScootersService {
   //   }
   //   return null;
   // }
-  //
+
 
   // save(scooter): Scooter {
   //   for (let i = 0; i < this.scooters.length; i++) {
