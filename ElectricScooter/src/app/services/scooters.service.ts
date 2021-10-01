@@ -25,15 +25,7 @@ export class ScootersService {
 
 
   // FindById(id: number): Scooter {
-  //   console.log(id)
-  //   for (const scooter of this.FindAll()){
-  //     console.log(scooter);
-  //     if (scooter.id === id){
-  //       console.log("found the scooter")
-  //       return scooter;
-  //     }
-  //   }
-  //   return null;
+  //
   // }
 
 
