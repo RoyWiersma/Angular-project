@@ -78,9 +78,4 @@ export class Scooter {
       }
     }
   }
-
-  static trueCopy(scooter: Scooter):Scooter {
-    return scooter == null ? null: Object.assign(new Scooter(), scooter);
-  }
-
 }

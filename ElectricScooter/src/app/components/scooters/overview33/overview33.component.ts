@@ -10,11 +10,9 @@ import {ScootersService} from "../../../services/scooters.service";
 export class Overview33Component implements OnInit {
 
 
-  // selectedScooter: Scooter;
   selectedScooter: Scooter | undefined;
 
   constructor(public scootersService: ScootersService) {
-    // this.scooters = scootersService.FindAll();
     this.scooters;
   }
 
