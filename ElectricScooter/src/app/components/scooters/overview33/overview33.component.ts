@@ -10,11 +10,9 @@ import {ScootersService} from "../../../services/scooters.service";
 export class Overview33Component implements OnInit {
 
 
-  // selectedScooter: Scooter;
-  selectedScooterId: number | undefined;
+  selectedScooter: Scooter | undefined;
 
   constructor(public scootersService: ScootersService) {
-    // this.scooters = scootersService.FindAll();
     this.scooters;
   }
 
@@ -25,9 +23,9 @@ export class Overview33Component implements OnInit {
   ngOnInit(): void {
   }
 
-  selectScooter(event: any, scooter: Scooter) {
-    this.selectedScooterId = scooter.id;
-    // console.log(this.selectedScooterId);
+  selectScooter(selectedScooter: Scooter) {
+    console.log(selectedScooter);
+    this.selectedScooter = selectedScooter;
   }
 
 }
