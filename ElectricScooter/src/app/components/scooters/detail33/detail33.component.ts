@@ -1,5 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {Scooter} from "../../../models/scooter";
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-detail33',
@@ -8,10 +7,7 @@ import {Scooter} from "../../../models/scooter";
 })
 export class Detail33Component implements OnInit {
 
-  @Input() scooter!: Scooter;
-
-  constructor() {
-  }
+  constructor() { }
 
   ngOnInit(): void {
   }
