@@ -19,7 +19,11 @@
       </table>
     </div>
     <div class="col">
-      <app-detail33 *ngIf="selectedScooter; else noneSelected" [scooter]="selectedScooter">
+<!--      <app-detail33 *ngIf="selectedScooter; else noneSelected" [scooter]="selectedScooter">-->
+<!--      </app-detail33>-->
+
+      <app-detail33 [editedScooterId]="selectedScooterId"
+                    *ngIf="selectedScooter; else noneSelected">
       </app-detail33>
     </div>
     <ng-template #noneSelected>

@@ -7,8 +7,11 @@ import {Scooter} from "../../../models/scooter";
   styleUrls: ['./detail33.component.css']
 })
 export class Detail33Component implements OnInit {
+
   @Input() scooter!: Scooter;
-  constructor() { }
+
+  constructor() {
+  }
 
   ngOnInit(): void {
   }
