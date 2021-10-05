@@ -1,5 +1,6 @@
 import {EventEmitter, Injectable} from '@angular/core';
 import {Scooter} from "../models/scooter";
+import {Overview33Component} from "../components/scooters/overview33/overview33.component";
 
 @Injectable({
   providedIn: 'root'
@@ -7,7 +8,6 @@ import {Scooter} from "../models/scooter";
 export class ScootersService {
 
   scooters: Scooter[];
-  // selectedScooter: Scooter;
   onRemoveScooterEmitter = new EventEmitter<Scooter>();
 
   constructor() {
@@ -36,7 +36,7 @@ export class ScootersService {
   // }
 
 
-  // save(scooter): Scooter {
+  // save(scooter: Scooter): Scooter {
   //   for (let i = 0; i < this.scooters.length; i++) {
   //     if (this.scooters[i].id === scooter.id) {
   //       const previousScooter = this.scooters[i];
@@ -45,14 +45,13 @@ export class ScootersService {
   //     }
   //
   //   }
-  //   this.onRemoveScooterEmitter.emit(this.selectedScooter);
+  //   this.onRemoveScooterEmitter.emit(Overview33Component.selectScooter);
   //   this.scooters.push(scooter);
   //   return scooter;
   //
   // }
 
-  //
-  // // @ts-ignore
+
   // deleteById(id: number): Scooter{
   //   for (let i = 0; i < this.scooters.length ; i++) {
   //     if (this.scooters[i].id === id){

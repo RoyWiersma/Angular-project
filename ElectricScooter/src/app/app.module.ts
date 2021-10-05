@@ -12,6 +12,7 @@ import {Overview32Component} from "./components/scooters/overview32/overview32.c
 import {FormsModule} from "@angular/forms";
 import { Overview33Component } from './components/scooters/overview33/overview33.component';
 import { Detail33Component } from './components/scooters/detail33/detail33.component';
+import {AppRoutingModule} from "./app-routing.module";
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +27,8 @@ import { Detail33Component } from './components/scooters/detail33/detail33.compo
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ],
   providers: [{provide: LOCALE_ID, useValue: 'nl'}],
   bootstrap: [AppComponent]
