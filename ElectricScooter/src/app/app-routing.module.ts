@@ -5,6 +5,7 @@ import {Overview31Component} from "./components/scooters/overview31/overview31.c
 import {Overview32Component} from "./components/scooters/overview32/overview32.component";
 import {Overview33Component} from "./components/scooters/overview33/overview33.component";
 import {UnknownRouteComponent} from "./components/unknown-route/unknown-route.component";
+import {Overview34Component} from "./components/overview34/overview34.component";
 
 
 const appRoutes: Routes = [
@@ -13,6 +14,7 @@ const appRoutes: Routes = [
   { path: 'overview31' , component: Overview31Component},
   { path: 'overview32' , component: Overview32Component},
   { path: 'overview33' , component: Overview33Component},
+  { path: 'overview34' , component: Overview34Component},
   { path: 'not-found', component: UnknownRouteComponent},
   { path: '**',  redirectTo: '/not-found'}
 ];
