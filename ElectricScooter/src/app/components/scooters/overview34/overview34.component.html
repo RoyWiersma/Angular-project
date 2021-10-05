@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <table class="table">
+        <thead>
+        <tr>
+          <th scope="col">Tag</th>
+          <th scope="col">Status</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let scooter of this.scootersService.FindAll(); let i = index"
+            [ngClass]="{ 'selected': scooter === selectedScooter }">
+          <th style="cursor: pointer"> {{scooter.tag}} </th>
+          <td style="cursor: pointer"> {{scooter.status}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
