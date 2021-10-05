@@ -12,8 +12,8 @@
         <tr *ngFor="let scooter of this.scootersService.FindAll()"
             (click)='selectScooter($event, scooter)'
             [ngClass]="{ 'selected': scooter === selectedScooter }">
-          <td> {{scooter.tag}} </td>
-          <td> {{scooter.status}}</td>
+          <th style="cursor: pointer"> {{scooter.tag}} </th>
+          <td style="cursor: pointer"> {{scooter.status}}</td>
         </tr>
         </tbody>
       </table>
