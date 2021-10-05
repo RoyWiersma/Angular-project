@@ -22,6 +22,10 @@ export class ScootersService {
     return this.scooters;
   }
 
+  getScooter(index: number) {
+    console.log(this.scooters[index]);
+    return this.scooters[index];
+  }
 
   // FindById(id: number): Scooter {
   //   console.log(id)
