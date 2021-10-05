@@ -13,6 +13,7 @@ import {FormsModule} from "@angular/forms";
 import { Overview33Component } from './components/scooters/overview33/overview33.component';
 import { Detail33Component } from './components/scooters/detail33/detail33.component';
 import {AppRoutingModule} from "./app-routing.module";
+import { UnknownRouteComponent } from './components/unknown-route/unknown-route.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +24,8 @@ import {AppRoutingModule} from "./app-routing.module";
     Overview32Component,
     Detail32Component,
     Overview33Component,
-    Detail33Component
+    Detail33Component,
+    UnknownRouteComponent
   ],
   imports: [
     BrowserModule,
