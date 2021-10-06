@@ -33,17 +33,18 @@ export class Scooter {
 
   }
 
-  static copyConstructer(scooter: Scooter): Scooter | null {
-    if (scooter == null) return null;
+  static copyConstructer(scooter: Scooter): Scooter {
 
-    return Object.assign(new Scooter(
-      this.num,
-      this.getRandomString(8),
-      status = this.getRandomStatus(),
-      this.getRandomAmsterdamGps(),
-      this.getRandomInt(0, 10000, 0),
-      this.getRandomInt(5, 100, 0)
-    )), scooter;
+    // return Object.assign(new Scooter(
+    // this.num,
+    // this.getRandomString(8),
+    // status = this.getRandomStatus(),
+    // this.getRandomAmsterdamGps(),
+    // this.getRandomInt(0, 10000, 0),
+    // this.getRandomInt(5, 100, 0)
+    // ));
+
+    return Object.assign({}, scooter);
   }
 
 
@@ -100,4 +101,6 @@ export class Scooter {
       && scooter1.gpsLocation === scooter2.gpsLocation && scooter1.batteryCharge === scooter2.batteryCharge;
 
   }
+
+
 }

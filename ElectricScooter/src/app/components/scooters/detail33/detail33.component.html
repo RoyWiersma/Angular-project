@@ -1,13 +1,16 @@
-<div *ngIf="editedScooterId" >
+<div *ngIf="scooterId">
   <form>
-    <input class="form-control" type="text" value="Update scooter {{editedScooter.tag}} Id: ({{editedScooter.id}})" aria-label="Disabled input example" disabled readonly>
+    <input class="form-control" type="text" value="Update scooter {{originalScooter.tag}}
+    Id: ({{editedScooter.id}})" aria-label="Disabled input example" disabled readonly>
     <div class="form-group">
       <label for="Tag">Tag</label>
-      <input type="text" name="Tag" class="form-control" id="Tag" [(ngModel)]="editedScooter.tag"/>
+      <input type="text" name="Tag" class="form-control"
+             id="Tag" [(ngModel)]="editedScooter.tag"/>
     </div>
     <div class="form-group">
       <label for="Status">Status</label>
-      <select class="form-select" id="Status" name="Status" aria-label="Default select example" style="cursor: pointer" [(ngModel)]="editedScooter.status">
+      <select class="form-select" id="Status" name="Status" aria-label="Default select example" style="cursor: pointer"
+              [(ngModel)]="editedScooter.status">
         <option>MAINTENANCE</option>
         <option>IN_USE</option>
         <option>IDLE</option>
