@@ -9,8 +9,7 @@
         </tr>
         </thead>
         <tbody>
-        <tr *ngFor="let scooter of this.scootersService.FindAll()"
-            (click)='selectScooter($event, scooter)'
+        <tr *ngFor="let scooter of this.scootersService.FindAll(); let i = index"
             [ngClass]="{ 'selected': scooter === selectedScooter }">
           <th style="cursor: pointer"> {{scooter.tag}} </th>
           <td style="cursor: pointer"> {{scooter.status}}</td>
@@ -19,11 +18,7 @@
       </table>
     </div>
     <div class="col">
-      <app-detail33 *ngIf="selectedScooter; else noneSelected" [scooter]="selectedScooter">
-      </app-detail33>
+      <router-outlet></router-outlet>
     </div>
-    <ng-template #noneSelected>
-      <p><- Klik links op een scoter om meer informatie te zien</p>
-    </ng-template>
   </div>
 </div>

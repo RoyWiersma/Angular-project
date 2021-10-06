@@ -1,4 +1,4 @@
-<div *ngIf="scooter" >
+<div [routerLink]="">
   <form>
     <input class="form-control" type="text" value="Update scooter {{scooter.tag}} Id: ({{scooter.id}})" aria-label="Disabled input example" disabled readonly>
     <div class="form-group">
@@ -29,6 +29,3 @@
   <br>
   <button type="button" class="btn btn-danger" >Delete</button>
 </div>
-
-
-

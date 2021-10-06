@@ -3,11 +3,11 @@ import {Scooter} from "../../../models/scooter";
 import {ScootersService} from "../../../services/scooters.service";
 
 @Component({
-  selector: 'app-overview33',
-  templateUrl: './overview33.component.html',
-  styleUrls: ['./overview33.component.css']
+  selector: 'app-overview34',
+  templateUrl: './overview34.component.html',
+  styleUrls: ['./overview34.component.css']
 })
-export class Overview33Component implements OnInit {
+export class Overview34Component implements OnInit {
 
 
   selectedScooter: Scooter | undefined;
@@ -23,8 +23,5 @@ export class Overview33Component implements OnInit {
   ngOnInit(): void {
   }
 
-  selectScooter(event: any, selectedScooter: Scooter) {
-    this.selectedScooter = selectedScooter;
-  }
 
 }

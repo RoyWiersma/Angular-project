@@ -12,6 +12,11 @@ import {Overview32Component} from "./components/scooters/overview32/overview32.c
 import {FormsModule} from "@angular/forms";
 import { Overview33Component } from './components/scooters/overview33/overview33.component';
 import { Detail33Component } from './components/scooters/detail33/detail33.component';
+import {AppRoutingModule} from "./app-routing.module";
+import { UnknownRouteComponent } from './components/unknown-route/unknown-route.component';
+import { Overview34Component } from './components/scooters/overview34/overview34.component';
+import { Detail34Component } from './components/scooters/detail34/detail34.component';
+import { ScooterStartComponent } from './components/scooters/scooter-start/scooter-start.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,11 +27,16 @@ import { Detail33Component } from './components/scooters/detail33/detail33.compo
     Overview32Component,
     Detail32Component,
     Overview33Component,
-    Detail33Component
+    Detail33Component,
+    UnknownRouteComponent,
+    Overview34Component,
+    Detail34Component,
+    ScooterStartComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ],
   providers: [{provide: LOCALE_ID, useValue: 'nl'}],
   bootstrap: [AppComponent]
