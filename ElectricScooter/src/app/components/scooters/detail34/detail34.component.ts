@@ -10,7 +10,7 @@ import {ScootersService} from "../../../services/scooters.service";
 })
 export class Detail34Component implements OnInit {
 
-   scooter!: Scooter;
+   scooter!: Scooter | null;
    id!: number
 
   constructor(private scooterSevice: ScootersService,
@@ -22,7 +22,7 @@ export class Detail34Component implements OnInit {
        .subscribe(
          (params: Params) => {
            this.id = +params['id'];
-           this.scooter = this.scooterSevice.getScooter(this.id)
+           this.scooter = this.scooterSevice.FindById(this.id)
          }
        );
   }

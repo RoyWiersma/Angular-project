@@ -23,7 +23,6 @@ export class Overview32Component implements OnInit {
     addRandomScooter() {
       let createScooter = Scooter.createSampleScooter();
       this.scooters[this.scooters.length] = createScooter;
-
       this.selectScooter(createScooter);
     }
 

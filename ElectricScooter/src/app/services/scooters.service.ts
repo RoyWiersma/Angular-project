@@ -8,6 +8,7 @@ import {Overview33Component} from "../components/scooters/overview33/overview33.
 export class ScootersService {
 
   scooters: Scooter[];
+  selectedScooter: Scooter | undefined;
   onRemoveScooterEmitter = new EventEmitter<Scooter>();
 
   constructor() {
@@ -18,53 +19,54 @@ export class ScootersService {
   }
 
   FindAll(): Scooter[]{
-    console.log("FindAll" + this.scooters);
+    // console.log("FindAll: " + this.scooters);
     return this.scooters;
   }
 
-  getScooter(index: number) {
-    console.log(this.scooters[index]);
-    return this.scooters[index];
+  FindById(id: number) : Scooter | null{
+    console.log(id)
+    for (const scooter of this.FindAll()){
+      console.log(scooter);
+      if (scooter.id === id){
+        console.log("found the scooter")
+        return scooter;
+      }
+    }
+    return null;
   }
 
-  // FindById(id: number): Scooter {
-  //   console.log(id)
-  //   for (const scooter of this.FindAll()){
-  //     console.log(scooter);
-  //     if (scooter.id === id){
-  //       console.log("found the scooter")
-  //       return scooter;
-  //     }
-  //   }
-  //   return null;
+  // getScooter(index: number) {
+  //   console.log(this.scooters[index]);
+  //   return this.scooters[index];
   // }
 
+  save(scooter: Scooter): Scooter {
+    for (let i = 0; i < this.scooters.length; i++) {
+      if (this.scooters[i].id === scooter.id) {
+        const previousScooter = this.scooters[i];
+        this.scooters[i] = scooter;
+        return previousScooter;
+      }
 
-  // save(scooter: Scooter): Scooter {
-  //   for (let i = 0; i < this.scooters.length; i++) {
-  //     if (this.scooters[i].id === scooter.id) {
-  //       const previousScooter = this.scooters[i];
-  //       this.scooters[i] = scooter;
-  //       return previousScooter;
-  //     }
-  //
-  //   }
-  //   this.onRemoveScooterEmitter.emit(Overview33Component.selectScooter);
-  //   this.scooters.push(scooter);
-  //   return scooter;
-  //
-  // }
+    }
+    this.onRemoveScooterEmitter.emit(this.selectedScooter);
+    this.scooters.push(scooter);
+    return scooter;
+
+  }
 
 
-  // deleteById(id: number): Scooter{
-  //   for (let i = 0; i < this.scooters.length ; i++) {
-  //     if (this.scooters[i].id === id){
-  //       const previousScooter = this.scooters[i];
-  //       this.scooters.splice(i, 1);
-  //
-  //       return previousScooter;
-  //     }
-  //   }
-  // }
+  // @ts-ignore
+  deleteById(id : number): Scooter{
+    for (let i = 0; i < this.scooters.length ; i++) {
+      // @ts-ignore
+      if (this.scooters[i].id === id){
+        const previousScooter = this.scooters[i];
+        this.scooters.splice(i, 1);
+
+        return previousScooter;
+      }
+    }
+  }
 
 }
