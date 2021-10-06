@@ -41,6 +41,53 @@ export class Detail33Component implements  OnChanges {
       }
   }
 
+  onClickButtonSave(): any {
+    this.scootersService.save(this.editedScooter);
+    this.assignScooter();
+  }
+
+  onClickButtonClear(): any {
+    if (window.confirm('Are you sure to discard unsaved changes ?'))
+      if (this.isChanged()) {
+        {
+          this.editedScooter.tag = "";
+          this.editedScooter.status;
+          this.editedScooter.gpsLocation = "";
+          this.editedScooter.mileage;
+          this.editedScooter.batteryCharge;
+        }
+      } else {
+        this.editedScooter.tag;
+        this.editedScooter.status ;
+        this.editedScooter.gpsLocation;
+        this.editedScooter.mileage;
+        this.editedScooter.batteryCharge;
+      }
+  }
+
+  onClickButtonReset(): any {
+    if (window.confirm('Are you sure to reset?')) {
+      this.editedScooter = Scooter.copyConstructer(this.originalScooter);
+    }
+  }
+
+  onClickButtonCancel(): any {
+    if (window.confirm('Are you sure to cancel?'))
+      if (this.isChanged()) {
+        {
+          this.onClickButtonClear();
+          this.originalScooter ;
+          this.scooterId = 0;
+          this.editedScooter ;
+        }
+      } else {
+        this.onClickButtonClear();
+        this.originalScooter ;
+        this.scooterId ;
+        this.editedScooter ;
+      }
+  }
+
   // ngOnInit(): void {
   // }
 
