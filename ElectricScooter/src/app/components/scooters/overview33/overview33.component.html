@@ -20,18 +20,18 @@
       </table>
 
       <button type="button" class="btn btn-primary" (click)='addRandomScooter();' > Add scooter</button>
-<!--      <button class="btn" (click)='addRandomScooter()'>Add scooter</button>-->
 
     </div>
     <div class="col">
       <app-detail33
+        (scooterDelete)="onDeletedScooter($event)"
         *ngIf="selectedScooter;
       else noneSelected"
         [scooterId]="selectedScooter.id">
       </app-detail33>
     </div>
     <ng-template #noneSelected>
-      <p><- Klik links op een scoter om meer informatie te zien</p>
+      <p><- Klik links op een scooter om meer informatie te zien</p>
     </ng-template>
   </div>
 </div>

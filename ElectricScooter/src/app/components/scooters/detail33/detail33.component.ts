@@ -1,4 +1,4 @@
-import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
+import {Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges} from '@angular/core';
 import {Scooter} from "../../../models/scooter";
 import {ScootersService} from "../../../services/scooters.service";
 
@@ -7,10 +7,13 @@ import {ScootersService} from "../../../services/scooters.service";
   templateUrl: './detail33.component.html',
   styleUrls: ['./detail33.component.css']
 })
-export class Detail33Component implements  OnChanges {
+export class Detail33Component implements OnChanges {
   originalScooter!: Scooter;
   editedScooter!: Scooter;
   @Input() scooterId!: number;
+
+  @Output()
+  scooterDelete = new EventEmitter<Scooter>();
 
   constructor(public scootersService: ScootersService) {
   }
@@ -30,14 +33,13 @@ export class Detail33Component implements  OnChanges {
       if (this.isChanged()) {
         {
           this.scootersService.deleteById(this.scooterId);
+          this.scooterDelete.emit(this.originalScooter);
           // this.editedScooter = null;
           // this.editedScooterId = undefined;
         }
       } else {
         this.scootersService.deleteById(this.scooterId);
-        // @ts-ignore
-        this.editedScooter = null;
-        // this.editedScooterId = undefined;
+        this.scooterDelete.emit(this.originalScooter);
       }
   }
 
@@ -47,16 +49,13 @@ export class Detail33Component implements  OnChanges {
   }
 
   onClickButtonClear(): any {
-    if (window.confirm('Are you sure to discard unsaved changes ?'))
-      if (this.isChanged()) {
-        {
-          this.editedScooter.tag = "";
-          this.editedScooter.status;
-          this.editedScooter.gpsLocation = "";
-          this.editedScooter.mileage;
-          this.editedScooter.batteryCharge;
-        }
-      } else {
+    if (window.confirm('Are you sure to discard unsaved changes ?')) {
+      this.editedScooter.tag = "";
+      this.editedScooter.status;
+      this.editedScooter.gpsLocation = "";
+      this.editedScooter.mileage = 0;
+      this.editedScooter.batteryCharge = 0;
+    } else {
         this.editedScooter.tag;
         this.editedScooter.status ;
         this.editedScooter.gpsLocation;

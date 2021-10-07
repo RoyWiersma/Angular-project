@@ -59,7 +59,6 @@ export class ScootersService {
   // @ts-ignore
   deleteById(id : number): Scooter{
     for (let i = 0; i < this.scooters.length ; i++) {
-      // @ts-ignore
       if (this.scooters[i].id === id){
         const previousScooter = this.scooters[i];
         this.scooters.splice(i, 1);

@@ -22,7 +22,7 @@ export class Detail34Component implements OnInit {
        .subscribe(
          (params: Params) => {
            this.id = +params['id'];
-           this.scooter = this.scooterSevice.FindById(this.id)
+           this.scooter = this.scooterSevice.FindById(this.id);
          }
        );
   }

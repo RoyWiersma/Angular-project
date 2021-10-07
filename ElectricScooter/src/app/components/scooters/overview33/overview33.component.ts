@@ -40,7 +40,12 @@ export class Overview33Component implements OnInit {
 
   selectScooter(event: any, selectedScooter: Scooter) {
     this.selectedScooter = selectedScooter;
-    console.log( this.selectedScooter);
+    console.log(this.selectedScooter);
+  }
+
+  onDeletedScooter(event: Scooter): void {
+    this.selectedScooter = undefined;
+    // console.log(this.selectedScooter);
   }
 
 
