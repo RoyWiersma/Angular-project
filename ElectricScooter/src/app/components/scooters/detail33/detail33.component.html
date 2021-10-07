@@ -31,11 +31,27 @@
     </div>
   </form>
   <br>
-  <button type="button" class="btn btn-primary" (click)="onClickButtonCancel()">Cancel</button>
-  <button type="button" [disabled]="!isChanged()" class="btn btn-outline-primary" (click)="onClickButtonReset()">Reset</button>
-  <button type="button" class="btn btn-outline-primary" (click)="onClickButtonClear()">Clear</button>
-  <button type="button"  [disabled]="!isChanged()" class="btn btn-success" (click)="onClickButtonSave()">Save</button>
-  <button type="button"  class="btn btn-danger"  [disabled]="isChanged()" (click)="onClickButtonRemove()">Delete</button>
+  <div class="row">
+    <div class="col">
+      <button type="button" class="btn btn-primary" (click)="onClickButtonCancel()">Cancel</button>
+    </div>
+    <div class="col">
+      <button type="button" [disabled]="!isChanged()" class="btn btn-outline-primary" (click)="onClickButtonReset()">
+        Reset
+      </button>
+    </div>
+    <div class="col">
+      <button type="button" class="btn btn-outline-primary" (click)="onClickButtonClear()">Clear</button>
+    </div>
+    <div class="col">
+      <button type="button" [disabled]="!isChanged()" class="btn btn-success" (click)="onClickButtonSave()">Save
+      </button>
+    </div>
+    <div class="col">
+      <button type="button" class="btn btn-danger" [disabled]="isChanged()" (click)="onClickButtonRemove()">Delete
+      </button>
+    </div>
+  </div>
 </div>
 
 
