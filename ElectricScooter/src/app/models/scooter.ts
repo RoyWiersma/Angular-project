@@ -33,6 +33,21 @@ export class Scooter {
 
   }
 
+  static copyConstructer(scooter: Scooter): Scooter {
+
+    // return Object.assign(new Scooter(
+    // this.num,
+    // this.getRandomString(8),
+    // status = this.getRandomStatus(),
+    // this.getRandomAmsterdamGps(),
+    // this.getRandomInt(0, 10000, 0),
+    // this.getRandomInt(5, 100, 0)
+    // ));
+
+    return Object.assign({}, scooter);
+  }
+
+
   private static getRandomString(length: number): string {
     const randomChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
     let result = '';
@@ -78,4 +93,14 @@ export class Scooter {
       }
     }
   }
+
+  static compareScooter(scooter1: Scooter, scooter2: Scooter): boolean{
+
+    return scooter1.id === scooter2.id && scooter1.mileage === scooter2.mileage
+      && scooter1.tag === scooter2.tag && scooter1.status === scooter2.status
+      && scooter1.gpsLocation === scooter2.gpsLocation && scooter1.batteryCharge === scooter2.batteryCharge;
+
+  }
+
+
 }

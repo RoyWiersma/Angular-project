@@ -9,12 +9,14 @@ import {ScootersService} from "../../../services/scooters.service";
 })
 export class Overview33Component implements OnInit {
 
-
+  selectedScooterId: number | undefined;
   selectedScooter: Scooter | undefined;
 
   constructor(public scootersService: ScootersService) {
     this.scooters;
   }
+
+
 
   get scooters(): Scooter[]{
     return this.scootersService.FindAll();
@@ -23,8 +25,23 @@ export class Overview33Component implements OnInit {
   ngOnInit(): void {
   }
 
+  addRandomScooter(): void {
+    this.scootersService.save(Scooter.createSampleScooter())
+    for (let i = 0; i < this.scooters.length; i++) {
+      this.selectedScooterId = this.scooters[i].id;
+    }
+    // console.log(this.selectedScooterId);
+  }
+
+  // selectScooter(event: any, scooter: Scooter) {
+  //   this.selectedScooterId = scooter.id;
+  //   console.log(scooter);
+  // }
+
   selectScooter(event: any, selectedScooter: Scooter) {
     this.selectedScooter = selectedScooter;
+    console.log( this.selectedScooter);
   }
+
 
 }

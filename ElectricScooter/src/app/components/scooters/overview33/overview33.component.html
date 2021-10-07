@@ -11,15 +11,23 @@
         <tbody>
         <tr *ngFor="let scooter of this.scootersService.FindAll()"
             (click)='selectScooter($event, scooter)'
+
             [ngClass]="{ 'selected': scooter === selectedScooter }">
           <th style="cursor: pointer"> {{scooter.tag}} </th>
           <td style="cursor: pointer"> {{scooter.status}}</td>
         </tr>
         </tbody>
       </table>
+
+      <button type="button" class="btn btn-primary" (click)='addRandomScooter();' > Add scooter</button>
+<!--      <button class="btn" (click)='addRandomScooter()'>Add scooter</button>-->
+
     </div>
     <div class="col">
-      <app-detail33 *ngIf="selectedScooter; else noneSelected" [scooter]="selectedScooter">
+      <app-detail33
+        *ngIf="selectedScooter;
+      else noneSelected"
+        [scooterId]="selectedScooter.id">
       </app-detail33>
     </div>
     <ng-template #noneSelected>
