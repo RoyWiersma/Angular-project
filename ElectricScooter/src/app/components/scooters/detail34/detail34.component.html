@@ -1,14 +1,17 @@
-<div *ngIf="scooter" >
-  <div [routerLink]="">
+<div *ngIf="scooterId">
+  <div [routerLink]="[index]">
   <form>
-    <input class="form-control" type="text" value="Update scooter {{scooter.tag}} Id: ({{scooter.id}})" aria-label="Disabled input example" disabled readonly>
+    <input class="form-control" type="text" value="Update scooter {{originalScooter.tag}}
+    Id: ({{editedScooter.id}})" aria-label="Disabled input example" disabled readonly>
     <div class="form-group">
       <label for="Tag">Tag</label>
-      <input type="text" name="Tag" class="form-control" id="Tag" [(ngModel)]="scooter.tag"/>
+      <input type="text" name="Tag" class="form-control"
+             id="Tag" [(ngModel)]="editedScooter.tag"/>
     </div>
     <div class="form-group">
       <label for="Status">Status</label>
-      <select class="form-select" id="Status" name="Status" aria-label="Default select example" style="cursor: pointer" [(ngModel)]="scooter.status">
+      <select class="form-select" id="Status" name="Status" aria-label="Default select example" style="cursor: pointer"
+              [(ngModel)]="editedScooter.status">
         <option>MAINTENANCE</option>
         <option>IN_USE</option>
         <option>IDLE</option>
@@ -16,17 +19,42 @@
     </div>
     <div class="form-group">
       <label for="Location">GPS-Location</label>
-      <input type="text" class="form-control" id="Location" name="Location" [(ngModel)]="scooter.gpsLocation">
+      <input type="text" class="form-control" id="Location" name="Location" [(ngModel)]="editedScooter.gpsLocation">
     </div>
     <div class="form-group">
       <label for="Mileage">Mileage</label>
-      <input type="text" class="form-control" id="Mileage" aria-describedby="emailHelp" name="Mileage" [(ngModel)]="scooter.mileage">
+      <input type="text" class="form-control" id="Mileage" aria-describedby="emailHelp" name="Mileage"
+             [(ngModel)]="editedScooter.mileage">
     </div>
     <div class="form-group">
       <label for="Charge">Battery Charge</label>
-      <input type="text" class="form-control" id="Charge" name="Battery" [(ngModel)]="scooter.batteryCharge">
+      <input type="text" class="form-control" id="Charge" name="Battery" [(ngModel)]="editedScooter.batteryCharge">
     </div>
   </form>
   <br>
-  <button type="button" class="btn btn-danger" >Delete</button>
+  <div class="row">
+    <div class="col">
+      <button type="button" class="btn btn-primary" (click)="onClickButtonCancel()">Cancel</button>
+    </div>
+    <div class="col">
+      <button type="button" [disabled]="!isChanged()" class="btn btn-outline-primary" (click)="onClickButtonReset()">
+        Reset
+      </button>
+    </div>
+    <div class="col">
+      <button type="button" class="btn btn-outline-primary" (click)="onClickButtonClear()">Clear</button>
+    </div>
+    <div class="col">
+      <button type="button" [disabled]="!isChanged()" class="btn btn-success" (click)="onClickButtonSave()">Save
+      </button>
+    </div>
+    <div class="col">
+      <button type="button" class="btn btn-danger" [disabled]="isChanged()" (click)="onClickButtonRemove()">Delete
+      </button>
+    </div>
+  </div>
+  </div>
 </div>
+
+
+
