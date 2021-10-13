@@ -1,12 +1,12 @@
 package app.models;
 
 import org.springframework.beans.factory.annotation.Autowired;
-
+import org.springframework.stereotype.Component;
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
-//import io.swagger.annotations.ApiModel;
 
 //@ApiModel(description = "Information about users")
+@Component
 public class Scooter {
 
     public static int num = 30000;
@@ -17,7 +17,6 @@ public class Scooter {
     private String gpsLocation;
     private double mileage;
     private int batteryCharge;
-
 
     public Scooter(int id, String tag, ScooterStatus scooterStatus, String gpsLocation, double mileage, int batteryCharge) {
         this.id = id;

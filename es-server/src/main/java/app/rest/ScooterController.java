@@ -11,8 +11,6 @@ import java.util.List;
 @RestController
 public class ScooterController {
 
-
-
     @GetMapping("/scooters")
     public List<Scooter> getTestScooters(){
         return List.of(
