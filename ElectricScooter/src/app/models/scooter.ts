@@ -30,20 +30,9 @@ export class Scooter {
       this.getRandomInt(0, 10000, 0),
       this.getRandomInt(5, 100, 0)
     );
-
   }
 
   static copyConstructer(scooter: Scooter): Scooter {
-
-    // return Object.assign(new Scooter(
-    // this.num,
-    // this.getRandomString(8),
-    // status = this.getRandomStatus(),
-    // this.getRandomAmsterdamGps(),
-    // this.getRandomInt(0, 10000, 0),
-    // this.getRandomInt(5, 100, 0)
-    // ));
-
     return Object.assign({}, scooter);
   }
 
