@@ -56,6 +56,7 @@ export class ScootersService {
   }
 
 
+
   // @ts-ignore
   deleteById(id : number): Scooter{
     for (let i = 0; i < this.scooters.length ; i++) {
