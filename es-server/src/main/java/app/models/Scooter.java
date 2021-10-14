@@ -2,23 +2,24 @@ package app.models;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
 //@ApiModel(description = "Information about users")
-@Component
+//@Component
 public class Scooter {
 
     public static int num = 30000;
 
-    private int id;
+    private long id;
     private String tag;
     private static ScooterStatus scooterStatus;
     private String gpsLocation;
     private double mileage;
     private int batteryCharge;
 
-    public Scooter(int id, String tag, ScooterStatus scooterStatus, String gpsLocation, double mileage, int batteryCharge) {
+    public Scooter(long id, String tag, ScooterStatus scooterStatus, String gpsLocation, double mileage, int batteryCharge) {
         this.id = id;
         this.tag = tag;
         this.scooterStatus = scooterStatus;
@@ -27,11 +28,12 @@ public class Scooter {
         this.batteryCharge = batteryCharge;
     }
 
-    public static Scooter createSampleScooter(int pId) {
+    public static Scooter createSampleScooter(long pId) {
 
         pId = Scooter.num += 3;
 
-        return new Scooter(pId, getRandomString(), scooterStatus = getRandomStatus(), getRandomAmsterdamGps(), getRandomInt(0, 10000, 0),
+        return new Scooter(pId, getRandomString(), getRandomStatus(),
+                getRandomAmsterdamGps(), getRandomInt(0, 10000, 0),
                 (int) getRandomInt(5, 100, 0));
     }
 
@@ -47,14 +49,14 @@ public class Scooter {
     }
 
 
-    private static double getRandomInt(double to,double from, int fixed) {
+    private static double getRandomInt(double to, double from, int fixed) {
         return ThreadLocalRandom.current().nextDouble(to, from + fixed);
     }
 
 
     public static ScooterStatus getRandomStatus() {
-        var status = Math.floor(Math.random() * 3);
-        switch ((int) status) {
+        double status = Math.floor(Math.random() * 3);
+        switch ((int)status) {
             case 0: {
                 System.out.println("in use");
                 return ScooterStatus.IN_USE;
@@ -94,11 +96,11 @@ public class Scooter {
         Scooter.num = num;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
