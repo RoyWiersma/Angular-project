@@ -11,8 +11,8 @@
         </thead>
         <tbody>
         <tr *ngFor="let scooter of this.scootersService.FindAll();"
-            [ngClass]="{ 'selected': scooter === selectedScooter }"
             [routerLink]="['scooter', {id:scooter.id}]">
+<!--            [ngClass]="{ 'selected': scooter === selectedScooter }"-->
           <th style="cursor: pointer">{{scooter.id}}</th>
           <th style="cursor: pointer"> {{scooter.tag}} </th>
           <td style="cursor: pointer"> {{scooter.status}}</td>
