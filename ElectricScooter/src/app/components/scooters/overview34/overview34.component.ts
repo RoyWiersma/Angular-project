@@ -15,7 +15,6 @@ export class Overview34Component implements OnInit {
   selectedScooter: Scooter | undefined;
 
   constructor(public scootersService: ScootersService,
-
               ) {
     this.scooters;
   }
@@ -32,6 +31,5 @@ export class Overview34Component implements OnInit {
       this.selectedScooterId = this.scooters[i].id;
     }
   }
-
 
 }
